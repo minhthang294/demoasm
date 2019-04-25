@@ -158,7 +158,7 @@
   	</ul><!--End sidebar-->
 	<header>
     <ul class="dropdown-content" id="user_dropdown">
-      <li><a class="indigo-text" href="homepage.php">Home Page</a></li>
+      <li><a class="indigo-text" href="index.php">Home Page</a></li>
       <li><a class="indigo-text" href="#!">Logout</a></li>
     </ul>
 
