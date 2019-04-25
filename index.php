@@ -66,13 +66,12 @@
             <h4>Categories:</h4>
             <br>
             <?php 
-              require_once('./dbconnector.php');
-              $conn = new DBConnector();
               $sql = "SELECT * FROM category";
-              $rows = $conn ->runQuery($sql);
+              $conn = pg_connect("host=ec2-54-221-201-212.compute-1.amazonaws.com port=5432 dbname=d5u0nk79uihrb1 user=extywghbvulcof password=7c62610cc93f176e19f60fda465381d46f564e4164b3bdfda4355f399254a5c8");
+		          $result = pg_query($conn,$sql);
              ?>
             <div class="list-group">
-              <?php while ($rows) { ?>
+              <?php while ($rows = pg_fetch_assoc($result)) { ?>
                 <a href="shopgrid.php?catId=<?= $rows['catId']?>" class="list-group-item"><?php echo $rows['catName'] ?></a>
               <?php } ?>
             </div>
