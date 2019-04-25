@@ -72,8 +72,8 @@
               $rows = $conn ->runQuery($sql);
              ?>
             <div class="list-group">
-              <?php foreach ($rows as $key) { ?>
-                <a href="shopgrid.php?catId=<?= $key['catId']?>" class="list-group-item"><?php echo $key['catName'] ?></a>
+              <?php while ($rows) { ?>
+                <a href="shopgrid.php?catId=<?= $rows['catId']?>" class="list-group-item"><?php echo $rows['catName'] ?></a>
               <?php } ?>
             </div>
           </div>
